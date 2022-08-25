@@ -61,3 +61,6 @@ Andrew Shagayev | [e-mail](mailto:drew-kun@protonmail.com)
 
 [terminus-git]: https://github.com/drew1kun/terminus_powerline_font_osx
 [powerline-git]: https://github.com/powerline/fonts
+=======
+# ansible-collection-fancyfonts
+Ansible Collection for installing my favourite fonts.
