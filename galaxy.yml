@@ -28,4 +28,5 @@ documentation: https://github.com/drew1kun/ansible-collection-fancyfonts/blob/ma
 homepage: https://github.com/drew1kun/ansible-collection-fancyfonts
 issues: https://github.com/drew1kun/ansible-collection-fancyfonts/issues
 
-build_ignore: []
+build_ignore:
+- '*.tar.gz'
