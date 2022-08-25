@@ -1,4 +1,5 @@
 roles/.DS_Store
 *.tar.gz
 *.asc
+ansible.cfg
 collections
