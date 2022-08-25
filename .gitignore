@@ -1,2 +1,4 @@
 roles/.DS_Store
 *.tar.gz
+*.asc
+collections
