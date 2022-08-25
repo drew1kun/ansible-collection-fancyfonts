@@ -1,0 +1,31 @@
+namespace: drew1kun
+name: fancyfonts
+version: 1.0.0
+readme: README.md
+authors:
+- Andrew Shagayev <drew-kun@protonmail.com>
+description: Ansible Collection for installing my favourite fonts.
+
+# The path to the license file for the collection. This path is relative to the root of the collection. This key is
+# mutually exclusive with 'license'
+license_file: 'LICENSE'
+tags:
+- font
+- fonts
+- nerdfonts
+- terminus
+- powerline
+- terminus_powerline
+- macos
+- mac
+- linux
+
+#dependencies:
+#  community.general: ">=3.0.0"
+
+repository: https://github.com/drew1kun/ansible-collection-fancyfonts.git
+documentation: https://github.com/drew1kun/ansible-collection-fancyfonts/blob/main/README.md
+homepage: https://github.com/drew1kun/ansible-collection-fancyfonts
+issues: https://github.com/drew1kun/ansible-collection-fancyfonts/issues
+
+build_ignore: []
