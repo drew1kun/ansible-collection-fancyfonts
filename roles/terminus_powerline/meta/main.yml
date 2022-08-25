@@ -1,0 +1,28 @@
+---
+galaxy_info:
+  role_name: terminus_powerline
+  author: Andrew Shagayev
+  description: 'Role installs the Terminus font (patched with Powerline symbols)'
+
+  license: MIT
+
+  min_ansible_version: 2.4.0.0
+
+  github_branch: master
+
+  platforms:
+  - name: MacOSX
+    versions:
+    - all
+    - any
+  - name: Debian
+    versions:
+    - jessie
+
+  galaxy_tags:
+  - terminus
+  - fonts
+  - powerline
+  - macos
+  - osx
+  - debian

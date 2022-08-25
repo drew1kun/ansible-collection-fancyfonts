@@ -1,0 +1,15 @@
+---
+# tasks file for ansible-nerdfonts
+
+- name: '[darwin] Install Nerd Fonts with homebrew cask'
+  homebrew_cask:
+    name: "{{ item[0].name }}"
+    state: present
+  become: yes
+  become_user: "{{ item[1] }}"
+  with_nested:
+  - "{{ nerdfonts_fonts }}"
+  - "{{ nerdfonts_users }}"
+  when: item[1] != 'root'
+  tags:
+  - nerdfonts

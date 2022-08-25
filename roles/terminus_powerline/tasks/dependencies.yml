@@ -1,0 +1,28 @@
+---
+- name: '[dependencies] Install fontconfig package on Darwin'
+  homebrew:
+    name:
+    - fontconfig
+    - git
+    state: present
+  register: terminus_powerline_dep_result
+  until:  terminus_powerline_dep_result is succeeded
+  become: no
+  when: "'Darwin' in ansible_os_family"
+  tags:
+  - terminus_powerline
+  - terminus_powerline_dependencies
+
+- name: '[dependencies] Install fontconfig package on Linux'
+  package:
+    name:
+    - fontconfig
+    - git
+    state: present
+  register: terminus_powerline_dep_result
+  until:  terminus_powerline_dep_result is succeeded
+  become: yes
+  when: "'Debian' in ansible_os_family"
+  tags:
+  - terminus_powerline
+  - terminus_powerline_dependencies
