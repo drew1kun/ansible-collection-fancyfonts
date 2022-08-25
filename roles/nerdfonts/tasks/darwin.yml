@@ -5,11 +5,10 @@
   homebrew_cask:
     name: "{{ item[0].name }}"
     state: present
-  become: yes
+  become: true
   become_user: "{{ item[1] }}"
   with_nested:
-  - "{{ nerdfonts_fonts }}"
-  - "{{ nerdfonts_users }}"
+    - "{{ nerdfonts_fonts }}"
+    - "{{ nerdfonts_users }}"
   when: item[1] != 'root'
-  tags:
-  - nerdfonts
+  tags: nerdfonts
