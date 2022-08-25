@@ -6,14 +6,16 @@
 # Find all brew fonts available:
 #   'brew -S nerdfont'
 #
-nerdfonts_users: [ "{{ ansible_user_id }}", root ]
+nerdfonts_users:
+  - "{{ ansible_user_id }}"
+  - root
 
 nerdfonts_fonts:
-- fontname: 'AnonymousPro'
-  name: 'font-anonymice-nerd-font'
-- fontname: 'Mononoki'
-  name: 'font-mononoki-nerd-font'
-- fontname: 'SourceCodePro'
-  name: 'font-sauce-code-pro-nerd-font'
-- fontname: 'Terminus'
-  name: 'font-terminess-ttf-nerd-font'
+  - fontname: 'AnonymousPro'
+    name: 'font-anonymice-nerd-font'
+  - fontname: 'Mononoki'
+      name: 'font-mononoki-nerd-font'
+  - fontname: 'SourceCodePro'
+    name: 'font-sauce-code-pro-nerd-font'
+  - fontname: 'Terminus'
+    name: 'font-terminess-ttf-nerd-font'
