@@ -11,51 +11,51 @@
   tags: nerdfonts
 
 # INSTALLER IS BROKEN
-#- name: '[debian] Install nerdfonts system-wide'
-#  command: "/tmp/nerd_fonts/install.sh -S {{ item.fontname }}"
-#  with_items: "{{ nerdfonts_fonts }}"
-#  when:
-#  - nerdfonts_deb_env is defined
-#  - "'system' in nerdfonts_deb_env"
-#  tags: nerdfonts
+# - name: '[debian] Install nerdfonts system-wide'
+#   command: "/tmp/nerd_fonts/install.sh -S {{ item.fontname }}"
+#   with_items: "{{ nerdfonts_fonts }}"
+#   when:
+#     - nerdfonts_deb_env is defined
+#     - "'system' in nerdfonts_deb_env"
+#   tags: nerdfonts
 #
-#- name: '[debian] Install nerdfonts for each user'
-#  command: "/tmp/nerd_fonts/install.sh -U {{ item[0].fontname }}"
-#  become: yes
-#  become_user: "{{ item[1] }}"
-#  with_nested:
-#  - "{{ nerdfonts_fonts }}"
-#  - "{{ nerdfonts_users }}"
-#  when:
-#  - nerdfonts_deb_env is defined
-#  - "'user' in nerdfonts_deb_env"
-#  tags: nerdfonts
+# - name: '[debian] Install nerdfonts for each user'
+#   command: "/tmp/nerd_fonts/install.sh -U {{ item[0].fontname }}"
+#   become: true
+#   become_user: "{{ item[1] }}"
+#   with_nested:
+#     - "{{ nerdfonts_fonts }}"
+#     - "{{ nerdfonts_users }}"
+#   when:
+#     - nerdfonts_deb_env is defined
+#     - "'user' in nerdfonts_deb_env"
+#   tags: nerdfonts
 
-#===================== FIX ========================
+# ===================== FIX ========================
 - name: '[debian] Setting nerdfonts_install_dir for system-wide installation'
   set_fact:
     nerdfonts_install_dir: "{{ nerdfonts_deb_fonts_sys_dir }}"
   when:
-  - nerdfonts_deb_env is defined
-  - "'system' in nerdfonts_deb_env"
+    - nerdfonts_deb_env is defined
+    - "'system' in nerdfonts_deb_env"
   tags: nerdfonts
 
 - name: '[debian] Setting nerdfonts_install_dir for user-specific installation'
   set_fact:
     nerdfonts_install_dir: "{{ nerdfonts_deb_fonts_user_dir }}"
   when:
-  - nerdfonts_deb_env is defined
-  - "'user' in nerdfonts_deb_env"
+    - nerdfonts_deb_env is defined
+    - "'user' in nerdfonts_deb_env"
   tags: nerdfonts
 
 - name: '[debian] Create NerdFonts folder for system-wode installation'
   file:
     path: "{{ nerdfonts_install_dir }}/NerdFonts"
     state: directory
-  become: yes
+  become: true
   when:
-  - nerdfonts_deb_env is defined
-  - "'system' in nerdfonts_deb_env"
+    - nerdfonts_deb_env is defined
+    - "'system' in nerdfonts_deb_env"
   tags: nerdfonts
 
 - name: '[debian] Create NerdFonts folder for each user'
@@ -63,12 +63,12 @@
     path: "{{ nerdfonts_install_dir }}/NerdFonts"
     state: directory
   with_items: "{{ nerdfonts_users }}"
-  become: yes
+  become: true
   become_user: "{{ item }}"
   become_method: su
   when:
-  - nerdfonts_deb_env is defined
-  - "'user' in nerdfonts_deb_env"
+    - nerdfonts_deb_env is defined
+    - "'user' in nerdfonts_deb_env"
   tags: nerdfonts
 
 - name: '[debian] Check if there are any NerdFonts already installed'
@@ -92,7 +92,7 @@
 
 - name: '[debian] Copy fonts for system-wide installation'
   command: "cp -r /tmp/nerd_fonts/patched-fonts/{{ item.key }} {{ nerdfonts_install_dir }}/NerdFonts/"
-  become: yes
+  become: true
   with_dict: "{{ nerdfonts_exists }}"
   when: item.value == false
   tags: nerdfonts
@@ -100,13 +100,13 @@
 - name: '[debian] Copy fonts for user-specific installation'
   command: "cp -r /tmp/nerd_fonts/patched-fonts/{{ item.key }} {{ nerdfonts_install_dir }}/NerdFonts/"
   with_dict: "{{ nerdfonts_exists }}"
-  become: yes
+  become: true
   become_user: "{{ item }}"
   become_method: su
   when:
-  - nerdfonts_deb_env is defined
-  - "'user' in nerdfonts_deb_env"
-  - item.value == false
+    - nerdfonts_deb_env is defined
+    - "'user' in nerdfonts_deb_env"
+    - item.value == false
   tags: nerdfonts
 
 - name: '[debian] Install specified NerdFonts'
@@ -115,4 +115,4 @@
   # Execute command only when some dictionary contains at least one 'false' value:
   when: false in nerdfonts_exists.values()
   tags: nerdfonts
-#==================================================
+# ==================================================
