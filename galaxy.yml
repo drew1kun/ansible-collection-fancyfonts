@@ -10,12 +10,9 @@ description: Ansible Collection for installing my favourite fonts.
 # mutually exclusive with 'license'
 license_file: 'LICENSE'
 tags:
-- font
-- fonts
 - nerdfonts
-- terminus
-- powerline
 - terminus_powerline
+- shell
 - macos
 - mac
 - linux

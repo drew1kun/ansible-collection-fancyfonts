@@ -1,5 +1,8 @@
+*.key
+*.swp
+.DS_Store
 roles/.DS_Store
+*.retry
 *.tar.gz
-*.asc
 ansible.cfg
 collections
