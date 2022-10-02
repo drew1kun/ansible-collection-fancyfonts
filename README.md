@@ -8,8 +8,8 @@ It is also a dependency for my workstation setup Ansible playbook.
 
 The roles included:
 
-  - `drew1kun.nerdfonts` ([doc](https://github.com/drew1kun/ansible-collection-fancyfonts/blob/main/roles/nerdfonts/README.md))
-  - `drew1kun.terminus_powerline` ([doc](https://github.com/drew1kun/ansible-collection-fancyfonts/blob/main/roles/terminus_powerline/README.md))
+  - `drew1kun.fancyfonts.nerdfonts` ([doc](https://github.com/drew1kun/ansible-collection-fancyfonts/blob/main/roles/nerdfonts/README.md))
+  - `drew1kun.fancyfonts.terminus_powerline` ([doc](https://github.com/drew1kun/ansible-collection-fancyfonts/blob/main/roles/terminus_powerline/README.md))
 
 ## Installation
 
