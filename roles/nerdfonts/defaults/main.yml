@@ -14,7 +14,7 @@ nerdfonts_fonts:
   - fontname: 'AnonymousPro'
     name: 'font-anonymice-nerd-font'
   - fontname: 'Mononoki'
-      name: 'font-mononoki-nerd-font'
+    name: 'font-mononoki-nerd-font'
   - fontname: 'SourceCodePro'
     name: 'font-sauce-code-pro-nerd-font'
   - fontname: 'Terminus'
