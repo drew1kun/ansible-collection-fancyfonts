@@ -7,6 +7,7 @@
   git:
     repo: https://github.com/ryanoasis/nerd-fonts.git
     dest: /tmp/nerd_fonts
+    version: latest
     depth: 1
   tags: nerdfonts
 
@@ -52,6 +53,7 @@
   file:
     path: "{{ nerdfonts_install_dir }}/NerdFonts"
     state: directory
+    mode: 0755
   become: true
   when:
     - nerdfonts_deb_env is defined
@@ -62,6 +64,7 @@
   file:
     path: "{{ nerdfonts_install_dir }}/NerdFonts"
     state: directory
+    mode: 0755
   with_items: "{{ nerdfonts_users }}"
   become: true
   become_user: "{{ item }}"
@@ -94,7 +97,7 @@
   command: "cp -r /tmp/nerd_fonts/patched-fonts/{{ item.key }} {{ nerdfonts_install_dir }}/NerdFonts/"
   become: true
   with_dict: "{{ nerdfonts_exists }}"
-  when: item.value == false
+  when: not item.value
   tags: nerdfonts
 
 - name: '[debian] Copy fonts for user-specific installation'
@@ -106,7 +109,7 @@
   when:
     - nerdfonts_deb_env is defined
     - "'user' in nerdfonts_deb_env"
-    - item.value == false
+    - not item.value
   tags: nerdfonts
 
 - name: '[debian] Install specified NerdFonts'
