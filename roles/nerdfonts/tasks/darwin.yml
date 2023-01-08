@@ -11,5 +11,8 @@
     - "{{ nerdfonts_fonts }}"
     - "{{ nerdfonts_users }}"
   when: item[1] != 'root'
-  ignore_errors: true
+  register: result
+  failed_when:
+    - "{{ result.failed }}"
+    - "{{ not 'Error: It seems there is already ' in result.msg }}"
   tags: nerdfonts
