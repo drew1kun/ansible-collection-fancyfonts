@@ -11,4 +11,5 @@
     - "{{ nerdfonts_fonts }}"
     - "{{ nerdfonts_users }}"
   when: item[1] != 'root'
+  ignore_errors: true
   tags: nerdfonts
