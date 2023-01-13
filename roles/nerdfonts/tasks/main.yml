@@ -2,11 +2,11 @@
 # tasks file for ansible-nerdfonts
 
 - name: '[main] Import Dependencies Installation tasks'
-  import_tasks: dependencies.yml
+  ansible.builtin.import_tasks: dependencies.yml
   tags:
     - nerdfonts
     - nerdfonts_dependencies
 
 - name: "[main] Include {{ ansible_os_family }}-specific tasks"
-  include_tasks: "{{ ansible_os_family | lower }}.yml"
+  ansible.builtin.include_tasks: "{{ ansible_os_family|lower }}.yml"
   tags: nerdfonts

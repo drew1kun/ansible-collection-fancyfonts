@@ -1,16 +1,16 @@
 ---
 - name: '[main] Import Dependencies installation tasks'
-  import_tasks: dependencies.yml
+  ansible.builtin.import_tasks: dependencies.yml
   tags:
     - terminus_powerline
     - terminus_powerline_dependencies
 
 - name: "[main] Include {{ ansible_os_family }} installation tasks"
-  include_vars: "{{ ansible_os_family }}.yml"
+  ansible.builtin.include_vars: "{{ ansible_os_family }}.yml"
   tags: terminus_powerline
 
 - name: '[main] Clone Terminus-Powerline Patched font from my github repo'
-  git:
+  ansible.builtin.git:
     repo: https://github.com/drew1kun/terminus_powerline_font_osx.git
     dest: "{{ terminus_powerline_fonts_dir }}/terminus_powerline"
     version: master
@@ -19,12 +19,13 @@
   tags: terminus_powerline
 
 - name: '[main] Cehck if Terminus-Powerline font is already installed'
-  stat:
+  ansible.builtin.stat:
     path: "{{ terminus_powerline_fonts_dir }}/terminus_powerline"
   register: terminus_powerline_stat
   tags: terminus_powerline
 
 - name: '[main] Install Terminus-Powerline font'
-  command: "fc-cache -f {{ terminus_powerline_fonts_dir }}"
+  ansible.builtin.command: >
+    fc-cache -f {{ terminus_powerline_fonts_dir }}
   when: not terminus_powerline_stat.stat.exists
   tags: terminus_powerline

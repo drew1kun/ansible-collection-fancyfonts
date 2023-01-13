@@ -2,7 +2,7 @@
 # tasks file for ansible-nerdfonts
 
 - name: '[darwin] Install Nerd Fonts with homebrew cask'
-  homebrew_cask:
+  community.general.homebrew_cask:
     name: "{{ item[0].name }}"
     state: present
   become: true
@@ -13,6 +13,6 @@
   when: item[1] != 'root'
   register: result
   failed_when:
-    - "{{ result.failed }}"
-    - "{{ not 'Error: It seems there is already ' in result.msg }}"
+    - result.failed
+    - "not 'Error: It seems there is already ' in result.msg"
   tags: nerdfonts
