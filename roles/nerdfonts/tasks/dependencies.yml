@@ -1,13 +1,13 @@
 ---
 - name: '[Dependencies] Accept XCode License on Darwin systems'
-  command: xcodebuild -license accept
+  ansible.builtin.command: xcodebuild -license accept
   become: true
   when: "'Darwin' in ansible_os_family"
   changed_when: false
   tags: nerdfonts
 
 - name: '[Dependencies] Install Dependencies for NerdFonts on Darwin systems'
-  homebrew:
+  community.general.homebrew:
     name:
       - fontconfig
       - git
@@ -19,7 +19,7 @@
   tags: nerdfonts
 
 - name: '[Dependencies] Install Dependencies for NerdFonts on Debian-based systems'
-  apt:
+  ansible.builtin.apt:
     name:
       - fontconfig
       - git

@@ -1,6 +1,6 @@
 ---
 - name: '[dependencies] Install fontconfig package on Darwin'
-  homebrew:
+  community.general.homebrew:
     name:
       - fontconfig
       - git
@@ -14,7 +14,7 @@
     - terminus_powerline_dependencies
 
 - name: '[dependencies] Install fontconfig package on Linux'
-  package:
+  ansible.builtin.package:
     name:
       - fontconfig
       - git
