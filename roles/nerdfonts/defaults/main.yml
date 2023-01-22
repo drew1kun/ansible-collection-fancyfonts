@@ -8,8 +8,11 @@
 #
 nerdfonts_users:
   - "{{ ansible_user_id }}"
-  - root
+  - 'root'
 
+# nerdfonts_fonts.fontname  - used for Linux Installation
+# nerdfonts_fonts.name      - used for Mac Installation
+# Names for Linux Installation can be found here: https://www.nerdfonts.com/font-downloads
 nerdfonts_fonts:
   - fontname: 'AnonymousPro'
     name: 'font-anonymice-nerd-font'
@@ -17,5 +20,9 @@ nerdfonts_fonts:
     name: 'font-mononoki-nerd-font'
   - fontname: 'SourceCodePro'
     name: 'font-sauce-code-pro-nerd-font'
-  - fontname: 'Terminus'
-    name: 'font-terminess-ttf-nerd-font'
+  - fontname: 'Hack'
+    name: 'font-hack-nerd-font'
+  - fontname: 'FiraCode'
+    name: 'font-fira-code-nerd-font'
+  - fontname: 'FiraMono'
+    name: 'font-fira-mono-nerd-font'
