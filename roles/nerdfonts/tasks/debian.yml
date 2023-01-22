@@ -62,6 +62,6 @@
   # commented because of the issue whith var registered withi loop,
   # registering "changed: false" while the actual change happened (reported yellow)
   # when: nerdfonts_copy.changed
-  # changed_when: nerdfonts_download.changed
+  changed_when: nerdfonts_download.changed
   become: true
   tags: nerdfonts
