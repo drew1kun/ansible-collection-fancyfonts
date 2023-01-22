@@ -38,20 +38,23 @@ roles:
 Role Variables
 ----
 
-OS-Agnostic:
+OS-Agnostic ([`defaults/main.yml`](defaults/main.yml)):
 
 | Variable | Description | Default |
 |----------|-------------|---------|
 | `nerdfonts_fonts[]` | List of nerdfonts to be installed | see [`defaults/main.yml`](defaults/main.yml) |
-| `nerdfonts_users[]` | List of users nerdfonts to be installed | see [`vars/debian.yml`](vars/debian.yml) |
+| `nerdfonts_users[]` | List of users nerdfonts to be installed | see [`defaults/main.yml`](defaults/main.yml) |
 
-Debian-Specific:
+Debian-Specific ([`defaults/debian.yml`](defaults/debian.yml)):
 
 | Variable | Description | Default |
 |----------|-------------|---------|
-| `nerdfonts_deb_env` | Install fonts system- or user-wide | `system` |
-| `nerdfonts_deb_fonts_sys_dir` | System-wide fonts directory | `/usr/local/share/fonts` |
-| `nerdfonts_deb_fonts_user_dir` | User-specific fonts directory | `~/.local/share/fonts` |
+| `nerdfonts_release` | Release version (see [here](https://github.com/ryanoasis/nerd-fonts/releases)) | `v2.3.1` | 
+| `nerdfonts_env` | Install fonts `system`-wide or `user`-wide | `system` |
+| `nerdfonts_sys_dir` | System-wide fonts directory | `/usr/local/share/fonts` |
+| `nerdfonts_usr_dir` | User-specific fonts directory | `~/.local/share/fonts` |
+| `nerdfonts_install_dir` | User-specific fonts directory | see [`defaults/debian.yml`](defaults/debian.yml) |
+
 
 Dependencies
 ----
