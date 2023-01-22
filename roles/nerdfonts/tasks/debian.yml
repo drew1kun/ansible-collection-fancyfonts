@@ -20,7 +20,6 @@
     path: "{{ nerdfonts_install_dir }}/{{ item.1.fontname }}"
     state: directory
     mode: 0755
-  #with_nested: [ "{{ nerdfonts_users }}", "{{ nerdfonts_fonts }}" ]
   loop: "{{ nerdfonts_users|product(nerdfonts_fonts)|list }}"
   become: true
   become_user: "{{ item.0 }}"
@@ -62,7 +61,7 @@
   ansible.builtin.command: "fc-cache -f {{ nerdfonts_install_dir }}"
   # commented because of the issue whith var registered withi loop,
   # registering "changed: false" while the actual change happened (reported yellow)
-  #when: nerdfonts_copy.changed
-  #changed_when: nerdfonts_download.changed
+  # when: nerdfonts_copy.changed
+  # changed_when: nerdfonts_download.changed
   become: true
   tags: nerdfonts
