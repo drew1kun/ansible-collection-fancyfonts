@@ -83,7 +83,7 @@ License
 Author Information
 ----
 
-Andrew Shagayev | [e-mail](mailto:drewshg@gmail.com)
+drew1kun | [e-mail](mailto:snub-museum-body@duck.com)
 
 [role-badge]:https://img.shields.io/badge/role-drew1kun.terminus__powerline-green.svg
 [galaxy-link]: https://galaxy.ansible.com/drew1kun/terminus_powerline/

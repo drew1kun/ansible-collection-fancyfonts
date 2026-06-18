@@ -1,9 +1,10 @@
+---
 namespace: drew1kun
 name: fancyfonts
-version: 1.1.4
+version: 1.1.5
 readme: README.md
 authors:
-  - Andrew Shagayev <drew-kun@protonmail.com>
+  - drew1kun <snub-museum-body@duck.com>
 description: Ansible Collection for installing my favourite fonts.
 
 # The path to the license file for the collection. This path is relative to the root of the collection. This key is
@@ -17,8 +18,8 @@ tags:
   - mac
   - linux
 
-#dependencies:
-#  community.general: ">=3.0.0"
+# dependencies:
+#   community.general: ">=3.0.0"
 
 repository: https://github.com/drew1kun/ansible-collection-fancyfonts.git
 documentation: https://github.com/drew1kun/ansible-collection-fancyfonts/blob/main/README.md

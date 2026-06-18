@@ -1,7 +1,7 @@
 ---
 galaxy_info:
   role_name: nerdfonts
-  author: Andrew Shagayev
+  author: drew1kun
   description: The role installs nerdfonts (http://nerdfonts.com/)
   license: MIT
   min_ansible_version: 1.2
