@@ -29,7 +29,7 @@ ansible-galaxy install geerlingguy.homebrew
 ```
 
  And include it in the playbook:
- 
+
 ```yaml
 roles:
   - geerlingguy.homebrew
@@ -49,7 +49,7 @@ Debian-Specific ([`defaults/debian.yml`](defaults/debian.yml)):
 
 | Variable | Description | Default |
 |----------|-------------|---------|
-| `nerdfonts_release` | Release version (see [here](https://github.com/ryanoasis/nerd-fonts/releases)) | `v2.3.1` | 
+| `nerdfonts_release` | Release version (see [here](https://github.com/ryanoasis/nerd-fonts/releases)) | `v2.3.1` |
 | `nerdfonts_env` | Install fonts `system`-wide or `user`-wide | `system` |
 | `nerdfonts_sys_dir` | System-wide fonts directory | `/usr/local/share/fonts` |
 | `nerdfonts_usr_dir` | User-specific fonts directory | `~/.local/share/fonts` |
@@ -80,7 +80,7 @@ License
 Author Information
 ----
 
-Andrew Shagayev | [e-mail](mailto:drewshg@gmail.com)
+drew1kun | [e-mail](mailto:snub-museum-body@duck.com)
 
 [role-badge]: https://img.shields.io/badge/role-drew1kun.nerdfonts-green.svg
 [galaxy-link]: https://galaxy.ansible.com/drew1kun/nerdfonts/

@@ -49,7 +49,7 @@ Example of the play:
 
 ## Author Information
 
-Andrew Shagayev | [e-mail](mailto:drew-kun@protonmail.com)
+drew1kun | [e-mail](mailto:snub-museum-body@duck.com)
 
 [collection-badge]: https://img.shields.io/badge/collection-drew1kun.fancyfonts-green.svg
 [galaxy-link]: https://galaxy.ansible.com/drew1kun/fancyfonts
