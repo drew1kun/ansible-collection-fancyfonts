@@ -6,7 +6,7 @@ galaxy_info:
 
   license: MIT
 
-  min_ansible_version: 2.4.0.0
+  min_ansible_version: "2.4.0"
 
   github_branch: master
 
@@ -14,7 +14,6 @@ galaxy_info:
     - name: MacOSX
       versions:
         - all
-        - any
     - name: Debian
       versions:
         - jessie

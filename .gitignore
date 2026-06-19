@@ -1,8 +1,8 @@
 .ansible/
 *.key
 *.swp
-.ds_store
-roles/.ds_store
+.DS_Store
+roles/.DS_Store
 *.tar.gz
 ansible.cfg
 *.pyc

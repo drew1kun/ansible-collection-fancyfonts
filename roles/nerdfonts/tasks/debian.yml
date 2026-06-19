@@ -7,7 +7,7 @@
   ansible.builtin.file:
     path: "{{ nerdfonts_install_dir }}/{{ item.fontname }}"
     state: directory
-    mode: 0755
+    mode: "0755"
   become: true
   loop: "{{ nerdfonts_fonts }}"
   when:
@@ -19,8 +19,8 @@
   ansible.builtin.file:
     path: "{{ nerdfonts_install_dir }}/{{ item.1.fontname }}"
     state: directory
-    mode: 0755
-  loop: "{{ nerdfonts_users|product(nerdfonts_fonts)|list }}"
+    mode: "0755"
+  loop: "{{ nerdfonts_users | product(nerdfonts_fonts) | list }}"
   become: true
   become_user: "{{ item.0 }}"
   when:
@@ -30,7 +30,8 @@
 
 - name: '[debian] Download specified Nerd Fonts for system-wide installation'
   ansible.builtin.unarchive:
-    src: "https://github.com/ryanoasis/nerd-fonts/releases/download/{{ nerdfonts_release }}/{{ item.fontname }}.zip"
+    src: >-
+      https://github.com/ryanoasis/nerd-fonts/releases/download/{{ nerdfonts_release }}/{{ item.fontname }}.zip
     dest: "{{ nerdfonts_install_dir }}/{{ item.fontname }}"
     remote_src: true
   loop: "{{ nerdfonts_fonts }}"
@@ -44,14 +45,15 @@
 
 - name: '[debian] Download specified Nerd Fonts for user-specific installation'
   ansible.builtin.unarchive:
-    src: "https://github.com/ryanoasis/nerd-fonts/releases/download/{{ nerdfonts_release }}/{{ item.1.fontname }}.zip"
+    src: >-
+      https://github.com/ryanoasis/nerd-fonts/releases/download/{{ nerdfonts_release }}/{{ item.1.fontname }}.zip
     dest: "{{ nerdfonts_install_dir }}/{{ item.1.fontname }}"
     remote_src: true
   become: true
   become_user: "{{ item.0 }}"
   register: nerdfonts_download
   until: nerdfonts_download is succeeded
-  loop: "{{ nerdfonts_users|product(nerdfonts_fonts)|list }}"
+  loop: "{{ nerdfonts_users | product(nerdfonts_fonts) | list }}"
   when:
     - nerdfonts_env is defined
     - "'user' in nerdfonts_env"
